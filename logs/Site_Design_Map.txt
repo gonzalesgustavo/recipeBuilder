@@ -1,0 +1,125 @@
+/////////////Site Design & Growth Goals//////////////
+
+Project Title: "Recipe logger"
+
+
+XXXXXXXXXXXXXXXXXXXXXX
+		  QUESTIONS TO ANSWER
+		What Needs to be done?
+		What are the projects requrements?
+		What are the foreseen Problems?
+		What are possible solutions to the problems?
+		What is the initial structure?
+		**Log unforseen problems**  
+XXXXXXXXXXXXXXXXXXXXXX
+
+
+
+1. Handle routing
+2. Handle Database connection
+3. Somehow incorperate the MVC for better managment of code
+4. {Take a breather and don't block thoughts}
+
+Requirements:
+1. Use PHP
+2. Need the use of persistant storage
+3. Mysql 
+4. no frameworks, no ruby on rails
+5. Look into routing and better code managment for php
+
+Impending Problems:
+1. Routing and post/ get is a nightmare 
+2. PHP not as friendly as JS or Ruby
+3. No templating Engine outside of Frameworks
+4. Database connection problems and lack of knowledge of SQL 
+5. Unmanagable code 
+
+Possible Solutions:
+1. Create some sort of route handler ... see youtube for help
+2. Figure out how to manage the lack of knowledge, use Youtube for reference
+3. Possibly create a class to handle the views or deal with the problems accordingly
+4. Research, take a quick course on SQL via youtube or Lynda .. strengthen knowledge
+5. Follow the MVC and label files better than normal. Simplify, simplify, and deal with funcitonality. 
+6. Set up a structure like an MVC pattern 
+7. Try and use psuedo code and comments -> build better practices than I have had in the past.
+
+Structure:
+	FOLDER STRUCTURE:
+		->MVC    : The MVC folder is the container for the models views and controllers the brains of the site
+		->Core   : All the core files and classes
+		->Logs   : Keep track of problems and journal status Since PHP's error catching is nill logs are useless.
+		->Public : What will be accessible to the public css/js/imgs/etc
+		->Vendor : Third party apps (Slim or somethingimilar if I use an API)
+
+	Note2Self: Avoid naming issues, use the standard web app structure in PHP MVC 
+
+	FILE STRUCTURE:
+	index - landing page
+		*Controls the initial site entry
+			^adapted^ - handle the initial route mapping 
+	Routing - Handles routing and navigation
+		//P//-> Somehow use the query string {{Remember PHP course from break}}
+			#Catch Query 
+				^adapted^ - use regular expressions to make the site more dependable
+			#Store Query 
+			#Use Query __initialize() Then go to requested page
+	Set up a control scheme - 
+		//P//-> Chapter 4 or 5 of PHP MVC pattern book 
+			#Controllers should handle data passing
+			#Controllers should handle view transfer
+			#Avoid complicating and cluttering files
+			#Setup a main controller *deal with inheritance and data transfers
+	Database
+		//P//-> mysqli is problematic avoid at all costs
+		#set up a generalized entry for database controll
+		#simplify the retrieval of adata and the transfer of data
+		#avoid the past api issues and create something centralized to use
+		#database should be in models (handle security)
+		#pdo is strong and reliable
+			DB Stucture:
+				ID     	          -- auto incriment
+				Title	          -- Name of the recipe
+				Serving Size  -- expected serving size
+				Recipe            -- the recipe and instrucitons
+				Tags 	           -- comma seperated
+
+Timeline: {{ 7 days }}
+	1--2 => build a routing engine(some way to improve the ability to hanlde routes and page transfers)
+	3    => Work on templating and getting data from controller to view
+	4    => Page design and database structure
+	5--6 => Database issues and code clean up
+
+
+
+Logs:
+	Routing Notes:
+		-URL comparison -> youtube search better uses of a for loop
+		-json for url mapping -failure and problimatic-
+		-Youtbe help - foreach loop 
+		-Regular Expression for route mapping and query string extraction (could be problimatic set up sublime filter for @crash commands)
+
+
+RESEARCH:
+	-)Look into regular expressionsm(route mapping using regular expressions)(update got it working)
+		**phpliveregex.com //testing regular expression in php
+	-)Look into regex cature groups (update: works)
+	-)Try to escape the header function(update: works)
+	-)Look into reliable datbase transfers aside from the buggy mysli_connect 
+	-)Look deeper into PDO and query modifiers
+	-)Possible solution create a framework to handle the routes, might be harder than thought! (update: works)
+	-) ***! Create your own MVC Framework youtbe! <- difficult but might pay off later!!
+	-)Create a routing engine ? (update: complete)
+	-)Look into creating a self contained controller creator (update: works but isn't optimized)
+	-)Consider single page app
+	-)Does PHP have template building options (look into creating a templating engine)
+		>>Templating engine way to advanced and time consuming (update)
+			&&Solution: use twig to handle the template engine simple vast and versitile in basic setup (Youtube -> twig install)
+	-)Using namespace and autoloading to handle the controllers  (update: works)
+	-)spl_autoload_register for cleaning up reqires (built into php 5) (update: works)
+
+Main Checklist:
+1. Routing 				...		DONE
+2. DB   					...		DONE
+3. Bootstrap
+4. code cleanup
+5. export prepare to send

@@ -1,0 +1,70 @@
+/////Code Dump/////
+	
+	echo '<pre>';
+		echo dump($router->getParams());
+	echo '</pre>';
+
+	//error page
+	echo "No route found for the url typed in";
+	//re-route the user to home 
+	//header("Location: ./public/index.php");
+
+	public function match ( $url )
+	{
+		foreach ($this->routes as $key => $value) {
+			if($url == $key)
+			{
+				$this->params = $value;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	$reg_ex = "/^(?P<controller>[a-z-]+)\/(?<action>[a-z-]+)$/";
+	$params = [];
+
+	if($router->match($url))
+{
+//
+}
+else
+{
+	//error page
+	echo "No route found for the url typed in";
+	//re-route the user to home 
+	//header("Location: ./public/index.php");
+}
+
+require '../Core/Router.php';
+require '../MVC/Controllers/Posts.php';
+
+is_callable([$controller_obj, $action])
+
+$controller = "MVC\Controllers\\$controller";
+
+echo "<p>Query String Parameters: <pre>". htmlspecialchars(print_r($_GET, true)). "</pre></p>" ; //@testing
+
+$host 		= 'localhost';
+		$dbname 	= 'recipes_db';
+		$username 	= 'root';
+		$password 	= 'mysql';
+
+		$db 		= new PDO("mysl:host=$host;dbname=$dbname; charset=utf8", $username, $password);//connect
+
+Twig_Autoload::register(); //might have changed research
+
+
+
+/*****
+	@psuedo-> includes go here
+	Requires/Includes...
+******/
+
+$host 		= 'localhost';
+			$dbname 	= 'recipes_db';
+			$username 	= 'root';
+			$password 	= 'mysql';
+
+
+
